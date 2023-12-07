@@ -10,6 +10,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         println("THIS IS CONTAINED IN MY SECOND COMMIT")
+
+        println("THIS IS CONTAINED IN MY THIRD COMMIT")
     }
 
 
