@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package io.grpc.examples.routeguide;
+
+import "google/protobuf/duration.proto";
+
+option java_multiple_files = true;
+
+service RouteGuide {
+
+  // A simple RPC where the client sends a request to the server using the stub
+  // and waits for a response to come back, just like a normal function call
+  rpc GetFeature(Point) returns (Feature){}
+
+  // A server-side streaming RPC where the client sends a request to the server
+  // and gets a stream to read a sequence of messages back
+  rpc ListFeatures(Rectangle) returns (stream Feature){}
+
+  // A client-side streaming RPC where the client writes a sequence of messages
+  // and sends them to the server, again using a provided stream
+  rpc RecordRoute(stream Point) returns (RouteSummary) {}
+
+  // A bidirectional streaming RPC where both sides send a sequence of messages
+  // using a read-write stream
+  rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+
+}
+
+message Point {
+  int32 latitude = 1;
+  int32 longitude = 2;
+}
+
+message Rectangle {
+  Point lo = 1;
+  Point hi = 2;
+}
+
+message Feature {
+  string name = 1;
+  Point location = 2;
+}
+
+message RouteNote {
+  Point location = 1;
+  string message = 2;
+}
+
+message RouteSummary {
+  int32 point_count = 1;
+  int32 feature_count = 2;
+  int32 distance = 3;
+
+  google.protobuf.Duration elapsed_time = 4;
+}
