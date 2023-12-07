@@ -13,7 +13,6 @@ class MainActivity : ComponentActivity() {
 
         println("THIS IS CONTAINED IN MY THIRD COMMIT")
 
-        asdfsfsd sdf
     }
 
 
