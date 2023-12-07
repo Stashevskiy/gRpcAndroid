@@ -14,6 +14,7 @@ class MainActivity : ComponentActivity() {
         println("THIS IS CONTAINED IN MY THIRD COMMIT")
 
         println("Change 2")
+        println("This line will be merged")
 
     }
 
