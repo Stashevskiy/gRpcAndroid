@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
 
         println("THIS IS CONTAINED IN MY THIRD COMMIT")
 
-        println("Change 2")
+        println("Change 3")
         println("This line will be merged")
 
     }
